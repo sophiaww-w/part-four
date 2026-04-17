@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Relief Connector</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="//unpkg.com/three"></script>
+    <script src="//unpkg.com/globe.gl"></script>
+</head>
+<body>
+
+    <div id="main-page" class="page">
+        <h1>Global Organizations</h1>
+        <p class="subheading">Drag to explore locations needing support</p>
+        
+        <div id="globeViz"></div>
+
+        <button class="view-all-btn" onclick="showPage('list-page')">View All Organizations</button>
+    </div>
+
+    <div id="details-page" class="page hidden">
+        <button class="back-btn" onclick="showPage('main-page')">← Back</button>
+        <h1 id="org-name">Organization Name</h1>
+        <h3 id="org-location">City, Country</h3>
+        
+        <div class="details-container">
+            <div class="image-placeholders">
+                <div class="box large">Image</div>
+                <div class="box small">Image</div>
+                <div class="box small">Image</div>
+            </div>
+            
+            <div class="info-panel">
+                <p id="org-description">Description goes here...</p>
+                <div class="stats">
+                    <p>Goal: <span id="org-goal">$1,000</span></p>
+                    <p>Raised: <span id="org-raised">$2,500</span></p>
+                </div>
+                <button class="donate-btn">DONATE NOW!</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="list-page" class="page hidden">
+        <button class="back-btn" onclick="showPage('main-page')">← Back</button>
+        <h1>All Locations</h1>
+        <ul id="org-list">
+            </ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
